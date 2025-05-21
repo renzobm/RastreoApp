@@ -2,7 +2,7 @@ name: Build APK
 
 on:
   push:
-    branches: [main]
+    branches: [main]  # O "master", según tu repo
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
         run: ./gradlew assembleDebug
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: RastreoApp
           path: app/build/outputs/apk/debug/app-debug.apk
